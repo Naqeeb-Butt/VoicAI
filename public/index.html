@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOICAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="assets/VOICai.png" alt="VOICAI Logo" class="logo-img">
+        </div>
+        <nav class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#voicai" class="nav-link">Why VOICAI</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="#dashboard" class="nav-link">Dashboard</a>
+        </nav>
+        <div class="auth-buttons" id="navbarContent">
+            <a href="signin.html" class="btn sign-in-btn">Sign In</a>
+            <a href="signup.html" class="btn sign-up-btn">Sign Up</a>
+        </div>
+    </header>
+    
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <div class="centered-content">
+                <img src="assets/VOICai.png" alt="VOICAI Logo" class="hero-logo">
+                <h1>Welcome to <span class="highlight">VOICAI</span></h1>
+                <p>Experience state-of-the-art text-to-speech technology with ease and simplicity.</p>
+                <a href="#pricing" class="cta-btn">Explore Pricing</a>
+            </div>
+        </section>
+
+        <!-- Why VOICAI Section -->
+        <section id="voicai" class="why-section">
+            <h2>Why Choose VOICAI?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="assets/ai-icon.png" alt="AI Voice" class="feature-icon">
+                    <h3>Cutting-edge AI</h3>
+                    <p>Our advanced AI generates human-like voices for all your needs.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="assets/customize-icon.png" alt="Customization" class="feature-icon">
+                    <h3>Customizable Voices</h3>
+                    <p>Tailor voices to match your brand with multiple styles and tones.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="assets/support-icon.png" alt="Support" class="feature-icon">
+                    <h3>24/7 Support</h3>
+                    <p>We’re here to help you every step of the way with our dedicated support team.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section">
+            <h2>Our Pricing Plans</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Standard</h3>
+                    <p class="price">$9.99/month</p>
+                    <ul>
+                        <li>10,000 characters</li>
+                        <li>5 voices</li>
+                        <li>Email support</li>
+                    </ul>
+                    <button class="pricing-btn">Get Started</button>
+                </div>
+                <div class="pricing-card highlight-card">
+                    <h3>Premium</h3>
+                    <p class="price">$19.99/month</p>
+                    <ul>
+                        <li>50,000 characters</li>
+                        <li>20 voices</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="pricing-btn">Get Started</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Deluxe</h3>
+                    <p class="price">$29.99/month</p>
+                    <ul>
+                        <li>Unlimited characters</li>
+                        <li>All voices</li>
+                        <li>24/7 dedicated support</li>
+                    </ul>
+                    <button class="pricing-btn">Get Started</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="dashboard-section">
+            <h2 class="section-title">Dashboard</h2>
+            <p class="dashboard-description">Transform text into natural-sounding speech effortlessly with VOICAI.</p>
+            <div class="dashboard-container">
+                <!-- Tags -->
+                <div class="tags">
+                    <span class="tag active">E-learning</span>
+                    <span class="tag">Corporate Training</span>
+                    <span class="tag">Podcast</span>
+                    <span class="tag">Audiobooks</span>
+                    <span class="tag">IVR Systems</span>
+                </div>
+        
+                <!-- Text Input -->
+                <div class="text-input">
+                    <textarea 
+                        placeholder="Enter your text here..." 
+                        class="dashboard-textarea">
+                        In this experiential e-learning module, you'll master the basics of using this Text-to-Speech widget.
+                    </textarea>
+                    <div class="char-count">146/250</div>
+                </div>
+        
+                <!-- Controls -->
+                <div class="controls">
+                    <div class="dropdown-group">
+                        <select id="voiceID" class="styled-select">
+                            <option value="">Select a Voice</option>
+                            <option value="voice1">Voice 1 - Natalie</option>
+                            <option value="voice2">Voice 2 - Ethan</option>
+                        </select>
+                        <select id="style" class="styled-select" disabled>
+                            <option value="">Select a Style</option>
+                            <option value="style1">Narrative</option>
+                            <option value="style2">Professional</option>
+                        </select>
+                    </div>
+                    <button class="play-btn">▶ Play</button>
+                </div>
+            </div>
+        </section>        
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 VOICAI. All rights reserved. Powered by RoboSoft Works</p>
+    </footer>
+    <script type="module">
+        import { signInWithGoogle, signOutUser } from "./script.js";
+    
+        // Attach event listeners for manual sign-in if needed
+        document.querySelector(".google-btn")?.addEventListener("click", signInWithGoogle);
+    </script>
+    <script type="module">
+        import { signUpUser } from "./script.js";
+      
+        document.querySelector(".auth-form").addEventListener("submit", async (event) => {
+          event.preventDefault();
+      
+          const username = document.querySelector("input[placeholder='Full Name']").value;
+          const email = document.querySelector("input[placeholder='Email']").value;
+          const password = document.querySelector("input[placeholder='Password']").value;
+      
+          try {
+            await signUpUser(username, email, password);
+            alert("Signup successful! Please login.");
+            window.location.href = "signin.html";
+          } catch (error) {
+            alert(error.message);
+          }
+        });
+      </script>
+      
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
