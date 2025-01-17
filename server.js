@@ -66,6 +66,6 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-app.listen(4000, '127.0.0.1', () => {
-    console.log('Server is running at http://127.0.0.1:4000');
+app.listen(4000, '0.0.0.0', () => {  // or port 3000 for sloganai
+    console.log('Server is running on port 4000');
 });
