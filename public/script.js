@@ -3594,7 +3594,7 @@ import {
 
 const firebaseConfig = {
     apiKey: "AIzaSyBV5h1ywtr6dbiLTB4cldnJS22IS88xV7g",
-    authDomain: "voicai.airumi.org",
+    authDomain: "voicai.firebaseapp.com",
     projectId: "voicai",
     storageBucket: "voicai.firebasestorage.app",
     messagingSenderId: "674094586742",
