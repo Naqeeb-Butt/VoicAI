@@ -66,6 +66,4 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+app.listen(4000, () => console.log('App2 running on port 4000'));
